@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "BEVFormer Training",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "torch.distributed.launch",
+            "console": "integratedTerminal",
+            "args": [
+                "--nproc_per_node",
+                "1",
+                "/NAS3/Members/linchenxi/BEVFormer/tools/train.py",
+                "./projects/configs/bevformer/bevformer_base.py",
+                "--resume-from",
+                "/NAS3/Members/linchenxi/BEVFormer/ckpts/r101_dcn_fcos3d_pretrain.pth",
+            ]
+        },
+    ]
+}
